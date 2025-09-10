@@ -35,7 +35,9 @@ const AppContent: React.FC = () => {
 function App() {
   return (
     <AuthProvider>
+      <div className="min-h-screen bg-[url('./assets/bg.jpeg')] bg-cover bg-center bg-no-repeat bg-fixed">
       <AppContent />
+      </div>
     </AuthProvider>
   );
 }

@@ -25,24 +25,20 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-gray-700">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4">
-              <img
-                src="/assets/grid360-login-logo.JPG"
-                alt="SAPS Logo"
-                className="w-25 h-25 object-contain rounded-sm  mx-auto"
-              />
-            </div>
-            <h1 className="text-3xl font-bold text-white mb-2">SAPS <span className="text-blue-400 font-normal">360</span></h1>
-            <p className="text-gray-400">AI Situational Awareness</p>
-                <div className="hidden md:block text-gray-400 text-sm">
-              <span className="text-white">v1.0.0 BETA</span>
-            </div>
-          </div>
-      
+    <div>
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-white-900 via-black to-white-900">
+      {/* Security-themed background elements */}
+     
+
+      <div className="w-full max-w-md mb-8 z-10">
+        <div className="bg-white-900/80 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white-700">
+          
+            <img
+              src="/assets/grid360-login-logo.JPG"
+              alt="GRID Logo"
+              className="w-full h-auto object-contain rounded-sm"
+            />
+            <br/>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="block text-gray-300 text-sm font-medium mb-2">
@@ -54,7 +50,7 @@ const LoginForm: React.FC = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                   placeholder="Enter your email"
                   required
                 />
@@ -71,7 +67,7 @@ const LoginForm: React.FC = () => {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-12 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                  className="w-full pl-10 pr-12 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                   placeholder="Enter your password"
                   required
                 />
@@ -94,31 +90,38 @@ const LoginForm: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium py-3 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium py-3 px-4 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500/50 shadow-lg shadow-blue-500/20"
             >
-              {isLoading ? 'Authenticating...' : 'Sign In'}
+              {isLoading ? (
+                <span className="flex items-center justify-center">
+                  <svg className="animate-spin h-5 w-5 mr-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Authenticating...
+                </span>
+              ) : (
+                'Sign In'
+              )}
             </button>
           </form>
-  
+
           <div className="mt-6 text-center text-gray-400 text-sm">
-            
-            {/* <p className="text-blue-400">admin@saps.gov.za / secure123</p> */}
+            <p className="text-xs">
+              Forgot password? <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors">Reset here</a>
+            </p>
           </div>
         </div>
       </div>
-       <footer className="fixed bottom-0 left-0 right-0 z-40 bg-gray-900/50 backdrop-blur-sm">
-	    <img
-                src="/assets/grid logo.png"
-                alt="SAPS Logo"
-                className="w-25 h-25 object-contain rounded-sm  mx-auto"
-              />
-          <div className="container mx-auto px-4 py-3 flex justify-between items-center pl-[30%]">
-            <p className="text-white/80 text-xs md:text-sm">
-              Copyright © {new Date().getFullYear()} GRID AI, a wholly-owned subsidiary of Next Group South Africa. All rights reserved.
-            </p>
-          </div>
-    </footer>
-    </div>
+
+      <footer className="fixed bottom-0 left-0 right-0 z-40 bg-gray-900/80 backdrop-blur-sm border-t border-gray-800 py-3">
+        <div className="container mx-auto px-4">
+          <p className="text-gray-400 text-xs text-center">
+            Copyright © {new Date().getFullYear()} GRID AI, a wholly-owned subsidiary of Next Group South Africa. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div></div>
   );
 };
 

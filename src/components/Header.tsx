@@ -5,7 +5,6 @@ import { FiHome, FiSearch, FiBell, FiInfo, FiX, FiMenu } from 'react-icons/fi';
 import Dashboard from './dashboard/Dashboard';
 import Modal from 'react-modal';
 import Patrols from './patrols/Patrols';
-import useAlertStore from './store/AlertStore';
 
 const Header: React.FC = () => {
   const { user, logout } = useAuth();
@@ -39,24 +38,23 @@ const Header: React.FC = () => {
     toggleMode();
   };
   
-  const camerasWithActiveDetections = useAlertStore(
-    (state) => state.camerasWithDetections.length
-  );
 
   return (
-    <header className="bg-blue-850 backdrop-blur-md border-b border-gray-700 px-6 py-4">
+    <header className="bg-red-850 backdrop-blur-md border-b border-red-700 px-6 py-4">
       
       <div className="flex items-center justify-between">
         {/* Left side - Logo and version */}
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
-            <img
-              src="/assets/saps.JPG"
-              alt="SAPS Logo"
-              className="w-10 h-10 object-contain rounded-sm mx-auto"
-            />
-            <h1 className="text-2xl font-bold text-white">SAPS <span className="text-blue-400 font-normal">360</span></h1>
+           <h1 className="text-3xl font-bold text-white mb-1">
+              GRID <span className="text-white-400 font-normal">360</span>
+            </h1>
+            <div className="text-gray-400 text-xs mt-1">
+              <span>v1.0.0 BETA</span>
+            </div>
           </div>
+
+         
         </div>
 
         {/* Center - Navigation and mode switch */}
@@ -82,11 +80,7 @@ const Header: React.FC = () => {
                 <BellIcon className="menu-icon w-5 h-5" />
                 <span>Alerts</span>
                 {/* Counter badge - only shows if count > 0 */}
-                {camerasWithActiveDetections > 0 && (
-                  <span className="absolute -top-2 -right-4 bg-red-800 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                    {camerasWithActiveDetections}
-                  </span>
-                )}
+               
               </a>
              <a  className="menu-item flex items-center space-x-1 text-gray-300 hover:text-white transition-colors relative">
               <CarIcon className="menu-icon w-5 h-5" />

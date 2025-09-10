@@ -39,7 +39,7 @@ const POIDetectionAlert: React.FC<DetectionAlertProps> = ({ detection, onClose }
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
             <AlertTriangle className="w-6 h-6 text-yellow-500" />
-            <h2 className="text-xl font-bold text-yellow-400">Person of Interest Detected!</h2>
+            <h2 className="text-xl font-bold text-yellow-400">Armed robbery in progress!</h2>
           </div>
           <button
             onClick={onClose}
@@ -90,7 +90,7 @@ const POIDetectionAlert: React.FC<DetectionAlertProps> = ({ detection, onClose }
               ) : (
                 <div className="flex-shrink-0">
                   <img
-                    src="/assets/logos/notfound.jpeg"
+                    src="/assets/logos/sandton robbery.jpeg"
                     alt="No suspect photo available"
                     className="w-16 h-16 object-contain rounded-sm opacity-50"
                   />
@@ -111,7 +111,7 @@ const POIDetectionAlert: React.FC<DetectionAlertProps> = ({ detection, onClose }
                   <p><strong className="text-gray-800">Description:</strong> {detection.suspect.description || 'White male, approx. in his fifties (Witness statement)'}</p>
                 </div>
                 <div className="col-span-2">
-                  <p><strong className="text-gray-800">Address:</strong> {detection.suspect.address || 'Not provided'}</p>
+                  <p><strong className="text-gray-800">Store:</strong>Brown Jewellers Mandela Square</p>
                 </div>
               </div>
             </div>

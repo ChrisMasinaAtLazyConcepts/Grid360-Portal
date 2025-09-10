@@ -88,7 +88,7 @@ export const mockPOIDetections: POIDetection[] = [
     status: 'active',
     confidence: 0.87,
     suspect: mockSuspects[2],
-    description: 'Suspect matches POI wanted for in assault GBH case',
+    description: 'AI classification - 3 possible Suspect, armed with hand-guns',
     location: { name:'Noord Primêre Skool',
        lat: -26.809124766624087,   // Corrected (matches real-world location)
     lng: 27.833375580056966},    // Corrected (matches real-world location)},

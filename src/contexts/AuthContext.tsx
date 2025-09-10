@@ -38,13 +38,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     // Mock authentication - in real app, this would be an API call
-    if (email === 'admin@saps.gov.za' && password === 'secure123') {
+    if (email === 'admin@sasolburg.grid360.co.za' && password === 'secure123') {
       const mockUser: User = {
         id: '1',
-        email: 'admin@saps.gov.za',
-        name: 'Captain Premchandt',
+        email: 'admin@sasolburg.grid360.co.za',
+        name: 'Administrator',
         role: 'admin',
-        badge: 'SAPS-001'
+        badge: 'GRID-001'
       };
       
       setUser(mockUser);

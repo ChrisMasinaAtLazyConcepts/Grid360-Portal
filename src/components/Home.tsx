@@ -92,15 +92,9 @@ const Home: React.FC = () => {
     <div className="min-h-screen bg-gray-900 flex flex-col">
       <Header />
       
-      <div className="flex-1 flex">
+      <div className="flex-1 flex   bg-cover bg-center bg-no-repeat">
         <Sidebar cameras={cameras} onCameraSelect={handleCameraClick} />
         <GoogleMapComponent
-          cameras={cameras}
-          onCameraClick={handleCameraClick}
-          onGunDetectionAlert={handleGunDetectionAlert}
-          onGunshotDetectionAlert={handleGunshotDetectionAlert}
-          onVOIDetectionAlert={handleVOIDetectionAlert}
-          onPOIDetectionAlert={handlePOIDetectionAlert}
           />
       </div>
 

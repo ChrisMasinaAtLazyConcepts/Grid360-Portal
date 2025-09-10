@@ -1,8 +1,7 @@
 // Home.tsx
-import React from 'react';
-import FloorPlan from './FloorPlan'; 
+import FloorPlan from './Floorplan/Floorplan';
 
-const Home = () => {
+const GoogleMapComponent = () => {
   return (
     <div>
       <h1>Floor Plan Example</h1>
@@ -11,4 +10,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default GoogleMapComponent;
